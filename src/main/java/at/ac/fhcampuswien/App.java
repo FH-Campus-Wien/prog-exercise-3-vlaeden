@@ -31,11 +31,41 @@ public class App {
             }
         System.out.println("Guess number 10: You lost! Have you ever heard of divide & conquer?");
     }
+    public static void oneMonthCalendar(int days, int firstday){
+
+        int spaces = (firstday-1)%7;
+
+                for (int i = 0; i < spaces; i++) {
+                    System.out.print("   ");
+                }
+                for (int i = 1; i <= days; i++) {
+                    if(i<10)
+                        System.out.print(" ");
+                    System.out.printf("%1d ", i);
+
+                    if (((i + spaces) % 7 == 0) || (i == days)) System.out.println();
+                }
+    }
+    public static int randomNumberBetweenOneAndHundred(){
+        int randomnum = 1;
+        while (randomnum <= 1 && randomnum>=100)
+        {
+            randomnum = (int)(Math.random());
+        }
+        return randomnum;
+    }
+
+    public static void swapArrays(){
+
+    }
+
     public static void main(String[] args) {
         // test your method implementations here
         // make method calls
         // print their results
         // etc.
+        oneMonthCalendar(30,5);
         guessingGame(5);
+
         }
     }
