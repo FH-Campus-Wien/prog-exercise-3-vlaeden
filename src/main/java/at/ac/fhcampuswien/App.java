@@ -55,7 +55,15 @@ public class App {
         return randomnum;
     }
 
-    public static void swapArrays(){
+    public static void swapArrays(int[] Array1, int[] Array2){
+
+
+
+    }
+
+    public static void CamelCase(){
+
+
 
     }
 
