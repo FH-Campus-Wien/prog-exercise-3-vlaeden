@@ -47,6 +47,7 @@ public class App {
                 }
     }
     public static int randomNumberBetweenOneAndHundred(){
+
         int randomnum = 1;
         while (randomnum <= 1 && randomnum>=100)
         {
