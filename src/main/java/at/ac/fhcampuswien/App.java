@@ -56,10 +56,27 @@ public class App {
         return randomnum;
     }
 
-    public static void swapArrays(int[] Array1, int[] Array2){
+    public static boolean swapArrays(int[] array1, int[] array2){
+        int i;
+        if(array1.length!=array2.length){
+            return false;
+        }
+        for(i = 0; i < array1.length; i++)
+        {
+            array1[i] = array1[i] + array2[i];
+            array2[i] = array1[i] - array2[i];
+            array1[i] = array1[i] - array2[i];
+        }
+        System.out.print("Array1 =>   ");
+        for (int element: array1) {
+            System.out.println(element);
+        }
+        System.out.print("Array1 => :  ");
+        for (int element: array2) {
+            System.out.println(element);
+        }
 
-
-
+        return true;
     }
 
     public static void CamelCase(){
@@ -75,6 +92,9 @@ public class App {
         // etc.
         oneMonthCalendar(30,5);
         guessingGame(5);
+
+
+        //swapArrays();
 
         }
     }
