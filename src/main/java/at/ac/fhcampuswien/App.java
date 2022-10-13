@@ -2,6 +2,7 @@ package at.ac.fhcampuswien;
 
 import java.util.Random;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class App {
     public static void guessingGame(int numberToGuess){
@@ -79,11 +80,44 @@ public class App {
         return true;
     }
 
-    public static void CamelCase(){
+    public static String camelCase(String text){
+
+            // to keep track of spaces
+            int spaces = 0;
+            // variable to hold the length of the string
+            int length = text.length( );
+            // converting the string expression to character array
+            char ch[ ] = text.toCharArray( ) ;
+            // // keep track of indices of ch[ ] array
+            int c = 0;
+            // traversing through each character of the array
+            for ( int i = 0; i < length; i++ )
+            {
+                ch[i] = Character.toLowerCase( ch[i] ) ;
+            }
+            for ( int i = 0; i < length; i++ )
+            {
+                if( i == 0 )
+                    ch[ i ] = Character.toUpperCase( ch[ i ] );
+
+                if (ch[ i ] == '\''|| ch[ i ] == '!'|| ch[ i ] == '"'|| ch[ i ] == ','|| ch[ i ] == '.'  ){
+                    ch[ i ] = ' ';
+                    spaces++;
+                    continue;
+                }
+
+                if (ch[i] == ' ') {
+                    spaces++;
+                    ch[i + 1] = Character.toUpperCase( ch[ i + 1] );
+                    continue ;
+                }
+                    ch[c++] = ch[i];
+                }
+            return String.valueOf( ch, 0, length - spaces ) ;
+        }
 
 
 
-    }
 
     public static void main(String[] args) {
         // test your method implementations here
@@ -92,9 +126,11 @@ public class App {
         // etc.
         oneMonthCalendar(30,5);
         guessingGame(5);
-
+        camelCase("Susn't is the bread");
 
         //swapArrays();
 
         }
     }
+
+
