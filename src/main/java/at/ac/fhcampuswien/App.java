@@ -48,8 +48,19 @@ public class App {
                 }
     }
 
-    public static long[] lcg(long a){
+    public static long[] lcg(long n) {
+
         long[] arr = new long[10];
+        long a = 1103515245L, c = 12345L, m = (long) Math.pow(2, 31);
+
+        for (int i = 0; i < 10; i++) {
+            if (i == 0) {
+                arr[0] = (((n * a) + c) % m);
+            } else {
+                arr[i] = ((a * arr[i - 1]) + c) % m;
+                System.out.println("Arr[" + i + "] = " + arr[i]);
+            }
+        }
         return arr;
     }
     public static int randomNumberBetweenOneAndHundred(){
