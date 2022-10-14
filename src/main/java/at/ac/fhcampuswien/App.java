@@ -47,6 +47,11 @@ public class App {
                     if (((i + spaces) % 7 == 0) || (i == days)) System.out.println();
                 }
     }
+
+    public static long[] lcg(long a){
+        long[] arr = new long[10];
+        return arr;
+    }
     public static int randomNumberBetweenOneAndHundred(){
 
         int randomnum = 1;
@@ -82,15 +87,11 @@ public class App {
 
     public static String camelCase(String text){
 
-            // to keep track of spaces
             int spaces = 0;
-            // variable to hold the length of the string
             int length = text.length( );
-            // converting the string expression to character array
             char ch[ ] = text.toCharArray( ) ;
-            // // keep track of indices of ch[ ] array
             int c = 0;
-            // traversing through each character of the array
+
             for ( int i = 0; i < length; i++ )
             {
                 ch[i] = Character.toLowerCase( ch[i] ) ;
@@ -116,18 +117,35 @@ public class App {
             return String.valueOf( ch, 0, length - spaces ) ;
         }
 
+    public static int checkDigit(int[] code){
 
+        int checksum = 0;
+
+        for (int i = 0; i <code.length ; i++) {
+            int num = code[i];
+            int weight = i + 2;
+            checksum += num * weight;
+        }
+
+        int checknum = checksum % 11;
+        checknum = 11 - checknum;
+
+        if (checknum == 10){
+            checknum = 0;
+        } else if (checknum == 11) {
+            checknum = 5;
+        } else {
+
+        }
+       return checknum;
+    }
 
 
     public static void main(String[] args) {
-        // test your method implementations here
-        // make method calls
-        // print their results
-        // etc.
-        oneMonthCalendar(30,5);
-        guessingGame(5);
-        camelCase("Susn't is the bread");
 
+        //oneMonthCalendar(30,5);
+        //guessingGame(5);
+        //camelCase("Susn't is the bread");
         //swapArrays();
 
         }
